@@ -8,8 +8,6 @@ const requests = {
     "temperature": 0.7
 }
 
-// const token = process.env.GPT_SECRET_KEY; 
-// const token = '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';
 const token = getSecretKey();
 
 // Axios request configuration
@@ -28,6 +26,7 @@ export async function postApi(stringFunction: string) {
         error: true,
         data: ""
     };
+    // console.log("my token is");
     // console.log(token);
     const requestData = requests;
     requestData.messages[0].content = "please create unit test of this function " + stringFunction;
@@ -37,9 +36,9 @@ export async function postApi(stringFunction: string) {
             // Handle the successful response
             result.error = false;
             const realContent = response.data.choices[0].message.content;
-            console.log(realContent);
+            // console.log(realContent);
             const content = realContent.split("```");
-            console.log(content);
+            // console.log(content);
             result.data = content[1];
 
             return result;
@@ -53,6 +52,5 @@ export async function postApi(stringFunction: string) {
             return result;
         });
     result = data;
-    console
     return result;
 }
