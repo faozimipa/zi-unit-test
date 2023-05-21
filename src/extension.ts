@@ -31,9 +31,13 @@ export function activate(context: vscode.ExtensionContext) {
 
 
 	let disposable = vscode.commands.registerCommand('zi-unit-test.createUnitTest', () => {
-		createUnitTest().then(res => {
-			vscode.window.showInformationMessage('createUnitTest from zi-unit-test!');
-		});
+		if (['', undefined, null].includes(getSecretKey())) {
+			vscode.window.showInformationMessage('Please set Secret key first from zi-unit-test!');
+		} else {
+			createUnitTest().then(res => {
+				vscode.window.showInformationMessage('createUnitTest from zi-unit-test!');
+			});
+		}
 	});
 	context.subscriptions.push(disposable);
 }
