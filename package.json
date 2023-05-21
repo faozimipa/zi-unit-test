@@ -1,7 +1,7 @@
 {
   "name": "zi-unit-test",
   "displayName": "zi-unit-test",
-  "description": "SImple Ai to create unit test",
+  "description": "Simple Ai to create unit test",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.78.0"
