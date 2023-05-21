@@ -9,7 +9,10 @@
     "vscode": "^1.78.0"
   },
   "categories": [
-    "Other"
+    "Unit Test",
+    "Generator",
+    "GPT",
+    "AI generator"
   ],
   "activationEvents": [],
   "main": "./dist/extension.js",
