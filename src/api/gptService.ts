@@ -1,3 +1,5 @@
+import { getSecretKey } from "../config/apiKey";
+
 const axios = require('axios');
 
 const requests = {
@@ -6,8 +8,9 @@ const requests = {
     "temperature": 0.7
 }
 
-const token = process.env.GPT_SECRET_KEY; 
+// const token = process.env.GPT_SECRET_KEY; 
 // const token = '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';
+const token = getSecretKey();
 
 // Axios request configuration
 const config = {
@@ -25,7 +28,7 @@ export async function postApi(stringFunction: string) {
         error: true,
         data: ""
     };
-
+    // console.log(token);
     const requestData = requests;
     requestData.messages[0].content = "please create unit test of this function " + stringFunction;
 

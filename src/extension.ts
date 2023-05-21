@@ -1,8 +1,19 @@
 import * as vscode from 'vscode';
 
 import { postApi } from './api/gptService';
+import { getSecretKey, setSecretKey } from './config/apiKey';
 export function activate(context: vscode.ExtensionContext) {
 	console.log('Congratulations, your extension "zi-unit-test" is now active!');
+	
+	let setSecretKeyDis = vscode.commands.registerCommand('zi-unit-test.setSecretKey', () => {
+		if (['', undefined, null].includes(getSecretKey())) {
+			setSecretKey().then(() => {
+				vscode.window.showInformationMessage('set Secret key from zi-unit-test!');
+			});
+		}
+	})
+	context.subscriptions.push(setSecretKeyDis);
+
 	let disposable = vscode.commands.registerCommand('zi-unit-test.createUnitTest', () => {
 		createUnitTest().then(res => {
 			vscode.window.showInformationMessage('createUnitTest from zi-unit-test!');

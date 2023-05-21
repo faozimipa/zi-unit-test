@@ -16,8 +16,22 @@
       {
         "command": "zi-unit-test.createUnitTest",
         "title": "Create Unit Test"
+      },
+      {
+        "command": "zi-unit-test.setSecretKey",
+        "title": "Set GPT secret key"
       }
-    ]
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "My Extension",
+      "properties": {
+        "ziext.secretKey": {
+          "type": "string",
+          "default": ""
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run package",
