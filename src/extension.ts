@@ -17,7 +17,6 @@ async function createUnitTest() {
 		const document = editor.document;
 		const selection = editor.selection;
 
-		// Get the word within the selection
 		const word = document.getText(selection);
 		// const reversed = word.split('').reverse().join('');
 		await postApi(word).then(response => {
