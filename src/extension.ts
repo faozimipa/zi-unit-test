@@ -16,7 +16,7 @@ export function activate(context: vscode.ExtensionContext) {
 	})
 	context.subscriptions.push(setSecretKeyDis);
 
-	let updateSecretKeyDis = vscode.commands.registerCommand('zi-unit-test.setSecretKey', () => {
+	let updateSecretKeyDis = vscode.commands.registerCommand('zi-unit-test.updateSecretKey', () => {
 		if (['', undefined, null].includes(getSecretKey())) {
 			setSecretKey().then(() => {
 				vscode.window.showInformationMessage('Update Secret key from zi-unit-test!');
