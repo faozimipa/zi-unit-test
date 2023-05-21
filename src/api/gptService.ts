@@ -6,8 +6,8 @@ const requests = {
     "temperature": 0.7
 }
 
-// const token = process.env.GPT_SECRET_KEY; 
-const token = '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';
+const token = process.env.GPT_SECRET_KEY; 
+// const token = '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';
 
 // Axios request configuration
 const config = {
