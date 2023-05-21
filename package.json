@@ -14,8 +14,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "zi-unit-test.helloWorld",
-        "title": "Hello World"
+        "command": "zi-unit-test.createUnitTest",
+        "title": "Create Unit Test"
       }
     ]
   },
