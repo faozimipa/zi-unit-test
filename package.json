@@ -2,7 +2,8 @@
   "name": "zi-unit-test",
   "displayName": "Zi unit Test",
   "description": "Simple AI to create unit test",
-  "icon": "./images/logo-ext.png",
+  "icon": "images/logo-ext.png",
+  "publisher": "ZitechPublisher",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.78.0"

@@ -1,71 +1,27 @@
-# zi-unit-test README
+## VSCode Extension - ZI Simple Unit Test Generator
 
-This is the README for your extension "zi-unit-test". After writing up a brief description, we recommend including the following sections.
+The VSCode Extension - Simple Unit Test Generator is a Visual Studio Code extension that helps automate the generation of simple unit tests for your code. It provides a convenient way to create basic test cases based on your code's functions or methods, reducing the effort required to write test code manually.
 
 ## Features
+- Automatically generates simple unit tests based on your code's functions or methods.
+- Supports multiple programming languages, including JavaScript, Python, Java, and more.
+- Generates test stubs for each function or method, including test setup and assertions.
+- Integration with Visual Studio Code for a seamless development experience.
+- Customizable templates for generated tests.
+- Easy configuration options for specifying test file locations and naming conventions.
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## Installation
+To use the VSCode Extension - Simple Unit Test Generator, follow these steps:
+- Launch Visual Studio Code.
+- Go to the Extensions view (Ctrl+Shift+X).
+- Search for "Zi Unit Test".
+- Click "Install" to install the extension.
+- Once installed, the extension will be ready for use.
 
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+## Usage
+- Open your code file in Visual Studio Code.
+- Right-click on a function or method that you want to generate a unit test for.
+- Select the "Zi Create Unit Test" option from the context menu.
+- The extension will generate a test file with the corresponding test stub for the selected function or method.
+- Modify the generated test as needed to add additional assertions or test cases.
+- Run the generated unit test to verify the functionality of the code.
