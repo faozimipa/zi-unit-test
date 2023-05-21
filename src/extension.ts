@@ -2,6 +2,7 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 
+import { postApi } from './api/gptService';
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
@@ -16,8 +17,9 @@ export function activate(context: vscode.ExtensionContext) {
 	let disposable = vscode.commands.registerCommand('zi-unit-test.createUnitTest', () => {
 		// The code you place here will be executed every time your command is executed
 		// Display a message box to the user
-		createUnitTest();
-		vscode.window.showInformationMessage('createUnitTest from zi-unit-test!');
+		createUnitTest().then(res => {
+			vscode.window.showInformationMessage('createUnitTest from zi-unit-test!');
+		});
 	});
 
 
@@ -25,7 +27,7 @@ export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(disposable);
 }
 
-export function createUnitTest() {
+async function createUnitTest() {
 	const editor = vscode.window.activeTextEditor;
 	if (editor) {
 		const document = editor.document;
@@ -33,14 +35,23 @@ export function createUnitTest() {
 
 		// Get the word within the selection
 		const word = document.getText(selection);
-		const reversed = word.split('').reverse().join('');
-		const result = word + '\n' +
-			'// your reserved is here \n' +
-			reversed;
-		editor.edit(editBuilder => {
-			editBuilder.replace(selection, result);
-		});
+		// const reversed = word.split('').reverse().join('');
+		await postApi(word).then(response => {
+			if (response.error) {
+				const result = word;
+				editor.edit(editBuilder => {
+					editBuilder.replace(selection, result);
+				});
+			} else {
+				const result = word + '\n' +
+					'// this is some unit test \n' +
+					response.data;
+				editor.edit(editBuilder => {
+					editBuilder.replace(selection, result);
+				});
+			}
+		})
 	}
 }
 // This method is called when your extension is deactivated
-export function deactivate() {}
+export function deactivate() { }
